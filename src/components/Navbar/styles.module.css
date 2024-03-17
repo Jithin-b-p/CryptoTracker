@@ -1,0 +1,24 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation__items {
+  font-weight: var(--fw-semiBold);
+  color: var(--grey);
+
+  display: flex;
+  gap: 1rem;
+}
+
+.item a {
+  transition: all 0.3s;
+}
+.item a:hover {
+  color: var(--white);
+}
+
+.logo {
+  font-size: 1.2rem;
+}
