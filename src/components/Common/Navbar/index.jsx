@@ -1,3 +1,4 @@
+import AnchorTemporaryDrawer from "../Header/drawer";
 import styles from "./styles.module.css";
 
 function Navbar() {
@@ -21,6 +22,10 @@ function Navbar() {
           <a href="/">Dashboard</a>
         </li>
       </ul>
+
+      <div className={styles.mobile__drawer}>
+        <AnchorTemporaryDrawer />
+      </div>
     </nav>
   );
 }

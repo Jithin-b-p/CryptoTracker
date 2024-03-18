@@ -7,9 +7,14 @@
 .navigation__items {
   font-weight: var(--fw-semiBold);
   color: var(--grey);
+  display: none;
+}
 
-  display: flex;
-  gap: 1rem;
+@media screen and (min-width: 48em) {
+  .navigation__items {
+    display: flex;
+    gap: 1rem;
+  }
 }
 
 .item a {
@@ -21,4 +26,10 @@
 
 .logo {
   font-size: 1.2rem;
+}
+
+@media screen and (min-width: 48em) {
+  .mobile__drawer {
+    display: none;
+  }
 }
