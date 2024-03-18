@@ -13,6 +13,7 @@
 @media screen and (min-width: 48em) {
   .navigation__items {
     display: flex;
+    align-items: center;
     gap: 1rem;
   }
 }

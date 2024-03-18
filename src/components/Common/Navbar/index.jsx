@@ -1,3 +1,4 @@
+import Button from "../Button";
 import AnchorTemporaryDrawer from "../Header/drawer";
 import styles from "./styles.module.css";
 
@@ -19,7 +20,10 @@ function Navbar() {
           <a href="/">Watchlist</a>
         </li>
         <li className={`${styles.item} ${styles.item4}`}>
-          <a href="/">Dashboard</a>
+          <Button
+            onClick={() => console.log("btn-click")}
+            content="Dashboard"
+          />
         </li>
       </ul>
 
