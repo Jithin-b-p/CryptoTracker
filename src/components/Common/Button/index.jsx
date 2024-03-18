@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import styles from "./style.module.css";
+import styles from "./styles.module.css";
 
 function Button({ content, onClick, outlined }) {
   return (

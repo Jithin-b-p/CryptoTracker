@@ -1,9 +1,12 @@
 .header {
-  width: 100%;
+  max-width: 92rem;
+  margin-inline: auto;
   padding: 1rem 1.5rem;
   position: sticky;
   top: 0;
   left: 0;
+  backdrop-filter: blur(3px);
+  z-index: 500;
 }
 .menu_icon {
   color: var(--grey);
