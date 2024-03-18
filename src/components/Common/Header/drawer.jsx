@@ -5,6 +5,7 @@ import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import styles from "./styles.module.css";
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function AnchorTemporaryDrawer() {
   const [open, setOpen] = useState(false);
@@ -21,16 +22,16 @@ export default function AnchorTemporaryDrawer() {
       >
         <ul className={styles.navigation__items}>
           <li className={`${styles.item} ${styles.item1}`}>
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li className={`${styles.item} ${styles.item2}`}>
-            <a href="/">Compare</a>
+            <Link to="/compare">Compare</Link>
           </li>
           <li className={`${styles.item} ${styles.item3}`}>
-            <a href="/">Watchlist</a>
+            <Link to="/watchlist">Watchlist</Link>
           </li>
           <li className={`${styles.item} ${styles.item4}`}>
-            <a href="/">Dashboard</a>
+            <Link to="/dashboard">Dashboard</Link>
           </li>
         </ul>
       </Drawer>

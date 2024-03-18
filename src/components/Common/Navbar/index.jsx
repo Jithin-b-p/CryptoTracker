@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../Button";
 import AnchorTemporaryDrawer from "../Header/drawer";
 import styles from "./styles.module.css";
@@ -11,19 +12,21 @@ function Navbar() {
 
       <ul className={styles.navigation__items}>
         <li className={`${styles.item} ${styles.item1}`}>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li className={`${styles.item} ${styles.item2}`}>
-          <a href="/">Compare</a>
+          <Link to="/compare">Compare</Link>
         </li>
         <li className={`${styles.item} ${styles.item3}`}>
-          <a href="/">Watchlist</a>
+          <Link href="/watchlist">Watchlist</Link>
         </li>
         <li className={`${styles.item} ${styles.item4}`}>
-          <Button
-            onClick={() => console.log("btn-click")}
-            content="Dashboard"
-          />
+          <Link to="/dashboard">
+            <Button
+              onClick={() => console.log("btn-click")}
+              content="Dashboard"
+            />
+          </Link>
         </li>
       </ul>
 
