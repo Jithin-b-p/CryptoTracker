@@ -1,0 +1,8 @@
+.grid {
+  max-width: 92rem;
+  padding-inline: 2.3rem;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+}
