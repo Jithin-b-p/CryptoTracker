@@ -6,3 +6,20 @@
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: 1.5rem;
 }
+
+.list {
+  max-width: 92rem;
+  margin-inline: auto;
+}
+
+.MuiTabPanel-root {
+  padding-inline: 1rem;
+}
+@media screen and (min-width: 47.625em) {
+  .list {
+    padding-inline: 2.3rem;
+  }
+  /* .MuiTabPanel-root {
+    padding-inline: 1rem;
+  } */
+}

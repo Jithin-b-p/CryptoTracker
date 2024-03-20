@@ -8,6 +8,7 @@ import { ThemeProvider, createTheme } from "@mui/material";
 
 import styles from "./styles.module.css";
 import Grid from "../Grid";
+import List from "../List";
 
 export default function TabsComponent({ coins }) {
   const [value, setValue] = useState("grid view");
@@ -37,7 +38,10 @@ export default function TabsComponent({ coins }) {
           onChange={handleChange}
           variant="fullWidth"
           aria-label="view tab"
-          sx={{ maxWidth: "92rem", marginInline: "auto" }}
+          sx={{
+            maxWidth: "92rem",
+            marginInline: "auto",
+          }}
         >
           <Tab label="grid" value="grid view" sx={stylesTab} />
           <Tab label="list" value="list view" sx={stylesTab} />
@@ -50,7 +54,18 @@ export default function TabsComponent({ coins }) {
             })}
           </div>
         </TabPanel>
-        <TabPanel value="list view">list</TabPanel>
+        <TabPanel
+          value="list view"
+          sx={{
+            paddingInline: "0.5rem",
+          }}
+        >
+          <ul className={styles.list}>
+            {coins.map((coin) => {
+              return <List coin={coin} key={coin.name} />;
+            })}
+          </ul>
+        </TabPanel>
       </TabContext>
     </ThemeProvider>
   );

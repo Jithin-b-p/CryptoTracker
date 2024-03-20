@@ -21,6 +21,7 @@ function Grid({ coin }) {
           alt=""
           width={40}
           height={40}
+          draggable="false"
         />
         <div className={styles.head_titles}>
           <span className={styles.item_symbol}>{coin.symbol}</span>
