@@ -1,0 +1,47 @@
+.searchbar {
+  position: relative;
+  width: min(90%, 45rem);
+
+  margin: 1.5rem auto;
+  padding: 1rem;
+
+  background-color: var(--darkgrey);
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.searchbar label {
+  color: var(--grey);
+  position: absolute;
+  transform: translateX(2.8rem);
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.searchbar input {
+  flex: 1;
+  padding: 0.3rem 0.5rem;
+
+  background-color: transparent;
+  color: var(--white);
+  border: none;
+  border-radius: 2rem;
+}
+
+.searchbar input:focus + label {
+  transform: translateX(2.8rem) translateY(-5rem);
+  opacity: 0;
+}
+
+.labeltranslate {
+  transform: translateX(2.8rem) translateY(-5rem) !important;
+}
+
+.searchbar input:focus-visible {
+  outline: 2px dotted var(--blue);
+}
