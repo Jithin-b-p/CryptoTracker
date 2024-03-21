@@ -4,6 +4,8 @@ import TabsComponent from "../components/Dashboard/Tabs";
 import axios from "axios";
 import Search from "../components/Dashboard/Search";
 import PaginationComponent from "../components/Dashboard/Pagination";
+import Loader from "../components/Common/Loader";
+import BackToTop from "../components/Common/BacktoTop";
 
 const API_URL =
   "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en";
@@ -13,6 +15,7 @@ function DashboardPage() {
   const [paginatedCoins, setPaginatedCoins] = useState([]);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
 
   const filteredCoins = coins.filter((coin) =>
     coin.name.toLowerCase().includes(search.toLowerCase())
@@ -35,6 +38,7 @@ function DashboardPage() {
         console.log(res);
         setCoins(res.data);
         setPaginatedCoins(res.data.slice(0, 10));
+        setIsLoading(false);
       })
       .catch((err) => console.log(err.message));
   }, []);
@@ -42,8 +46,17 @@ function DashboardPage() {
     <>
       <Header />
       <Search search={search} onSearchChange={handleSearchChange} />
-      <TabsComponent coins={search ? filteredCoins : paginatedCoins} />
-      <PaginationComponent page={page} onPageChange={handlePageChange} />
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <TabsComponent coins={search ? filteredCoins : paginatedCoins} />
+          {!search && (
+            <PaginationComponent page={page} onPageChange={handlePageChange} />
+          )}
+        </>
+      )}
+      <BackToTop />
     </>
   );
 }

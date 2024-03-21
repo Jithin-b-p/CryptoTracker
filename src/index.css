@@ -66,7 +66,7 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
+  min-height: 100svh;
   text-rendering: optimizeSpeed;
 }
 
@@ -125,8 +125,6 @@ select {
 }
 
 body {
-  height: 150vh;
-
   margin: 0;
   background-color: var(--black);
   color: var(--white);
