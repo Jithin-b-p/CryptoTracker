@@ -1,0 +1,8 @@
+.coin_desc {
+  margin-block: 1.5rem;
+}
+
+.coin_desc a {
+  color: var(--blue);
+  text-decoration: underline;
+}

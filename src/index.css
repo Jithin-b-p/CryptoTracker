@@ -152,3 +152,18 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.grey-wrapper {
+  background-color: var(--darkgrey);
+  max-width: min(90%, 90rem);
+  margin: 2rem auto;
+
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+}
+
+.readmore {
+  color: var(--grey);
+  cursor: pointer;
+  margin-block-end: 1rem;
+}
