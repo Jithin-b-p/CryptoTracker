@@ -1,0 +1,5 @@
+.select_box {
+  max-width: 10rem;
+  margin-block-end: 1.2rem;
+  color: var(--white);
+}
