@@ -1,0 +1,7 @@
+.toggle_prices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-block: 1.2rem;
+}
