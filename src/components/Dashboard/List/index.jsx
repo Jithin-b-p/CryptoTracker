@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 
 function List({ coin }) {
   const priceChange = coin.price_change_percentage_24h;
+  console.log(coin);
   return (
     <Link to={`/coin/${coin.id}`}>
       <li

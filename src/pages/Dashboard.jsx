@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Common/Header";
 import TabsComponent from "../components/Dashboard/Tabs";
-import axios from "axios";
+
 import Search from "../components/Dashboard/Search";
 import PaginationComponent from "../components/Dashboard/Pagination";
 import Loader from "../components/Common/Loader";
 import BackToTop from "../components/Common/BacktoTop";
-
-const API_URL =
-  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en";
+import { fetchCoins } from "../functions/fetchCoins";
 
 function DashboardPage() {
   const [coins, setCoins] = useState([]);
@@ -32,16 +30,18 @@ function DashboardPage() {
   };
 
   useEffect(() => {
-    axios
-      .get(API_URL)
-      .then((res) => {
-        console.log(res);
-        setCoins(res.data);
-        setPaginatedCoins(res.data.slice(0, 10));
-        setIsLoading(false);
-      })
-      .catch((err) => console.log(err.message));
+    getData();
   }, []);
+
+  const getData = async () => {
+    const coinData = await fetchCoins();
+    if (coinData) {
+      setCoins(coinData);
+      setPaginatedCoins(coinData.slice(0, 10));
+      setIsLoading(false);
+    }
+  };
+
   return (
     <>
       <Header />

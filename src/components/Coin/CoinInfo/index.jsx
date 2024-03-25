@@ -3,6 +3,7 @@ import { useState } from "react";
 import styles from "./styles.module.css";
 
 function CoinInfo({ heading, desc }) {
+  console.log(heading, desc);
   const shortDesc =
     desc.slice(0, 200) + "..." + "<span class='readmore'>Read More</span>";
   const longDesc =

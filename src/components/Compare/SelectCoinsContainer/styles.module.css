@@ -1,0 +1,9 @@
+.selection_container {
+  max-width: min(95%, 90rem);
+  padding-inline: 1.5rem;
+  margin-inline: auto;
+  margin-block-start: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
